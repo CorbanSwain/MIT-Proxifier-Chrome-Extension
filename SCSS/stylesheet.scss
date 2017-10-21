@@ -1,0 +1,133 @@
+$clearColor: rgba(0,0,0,0);
+$darkBlue: rgb(77,77,98);
+$white: #fff;
+$yellow: rgb(255,9,255);
+$mainHeight: 25px;
+$fontSize: $mainHeight * 0.69;
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  font-size: $fontSize;
+  background-color: $darkBlue;
+  color: $white;
+  margin: 0;
+}
+
+#mainContainer {
+  top: 0; bottom: 0; right: 0; left: 0;
+  margin: 8px;
+  margin-bottom: 15px;
+  margin-right: 12px;
+  height: $mainHeight;
+  white-space: nowrap;
+}
+
+#mainContainer > div {
+  display: inline-block;
+  position: relative;
+}
+
+#graphicsContainer {
+  position: relative;
+  top: 4px;
+  width: 22px; height: 22px;
+  margin: 0;
+}
+
+#graphicsContainer > div {
+  position: absolute;
+  display: inline-block;
+}
+
+#status {
+  height: $fontSize;
+  background-color: $clearColor;
+  min-width: 80px;
+  margin-right: 5px;
+  white-space: nowrap;
+}
+
+#loaderContainer1 {
+  top: 0; right: 0;
+  width: 22px; height: 22px;
+  z-index: 1;
+}
+
+#loaderContainer2 {
+  position: relative;
+  height: 22px;
+  width: 22px;
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-duration: 2.8s;
+  animation-timing-function: linear;
+  margin: 0;
+}
+
+#loaderContainer2 > div {
+  position: absolute;
+}
+
+#iconContainer {
+  top: 1px; right: 1px;
+  height: 20px; width: 20px;
+  z-index: 0;
+}
+
+#statusIcon {
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+}
+
+.loader {
+  border-color: $clearColor;
+  border-style: solid;
+  border-radius: 50%;
+  
+  animation-iteration-count: infinite;
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.58, 0.17, 0.54, 0.88);
+}
+
+#loaderA {
+  z-index: 2;
+  
+  top: 1px; left: 1px;
+  
+  height: 14px; width: 14px;
+  
+  border-width: 3px;
+  
+  border-top-color: $white;
+  border-right-color: $white;
+  
+  animation-delay: 0s;
+}
+
+#loaderB {
+  z-index: 3;
+  
+  top: 0; left: 0;
+  
+  height: 12px; width: 12px;
+  
+  border-width: 5px;
+  
+  border-top-color: $darkBlue;
+  border-right-color: $darkBlue;
+  
+  animation-delay: 0.27s;
+}
+
+@keyframes spin {
+  0% {transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes minimize {
+  0% {transform: scale(1, 1); opacity: 1.0; }
+  95% { opacity: 1.0; }
+  100% { transform: scale(0, 0); opacity: 0.0; }
+}

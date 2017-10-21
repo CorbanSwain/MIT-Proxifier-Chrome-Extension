@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+
+  "name": "MIT URL Proxifier",
+  "description": "Adds the proxy string to URLs to enaable access to journals and books while off-campus.",
+  "version": "0.1",
+  
+  "icons" : {
+    "16": "images/16px.png",
+    "19": "images/19px.png",
+    "48": "images/48px.png",
+    "128": "images/128px.png"
+  },
+  
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/16px.png",
+      "19": "images/19px.png",
+      "48": "images/48px.png",
+      "128": "images/128px.png"
+    },
+    "default_title": "Get Access via MIT Libraries."
+  },
+  
+  "background": {
+    "scripts": ["urlProcessing.js",
+                "database.js",
+                "eventPage.js"
+    ],
+    "persistent": false
+  },
+  
+  "permissions": [
+    "tabs",
+    "webNavigation"
+  ]
+}

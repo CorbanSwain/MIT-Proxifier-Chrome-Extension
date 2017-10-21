@@ -1,0 +1,19 @@
+# Ignore Komodo Project
+*komodo*
+
+# Emacs Files
+\#*
+.#*
+*~
+
+# Google Drive Icon? Thingies
+Icon
+Icon?
+?Icon
+
+# Key
+*.pem
+
+
+# Apple Stuff
+.DS_store
